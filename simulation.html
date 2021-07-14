@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>cms_visualizer.simulation API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cms_visualizer.simulation</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from __future__ import annotations
+import json
+from typing import Optional, List, Text, Dict
+from dataclasses import dataclass
+from .topography import Topography
+
+
+@dataclass
+class Pedestrian:
+    id: int
+    radius: int
+    label: Optional[Text]
+
+
+@dataclass
+class Position:
+    x: int
+    y: int
+
+
+SimulationStep = Dict[int, Position]
+
+
+class Simulation:
+    def __init__(self, topography: Topography, pedestrians: List[Pedestrian], n_steps: int, simulation_steps: List[SimulationStep]) -&gt; None:
+        &#34;&#34;&#34;Crowd simulation with topography and simulation steps 
+
+        Args:
+            topography (Topography): Topography in which the simulation took place
+            pedestrians (List[Pedestrian]): List of pedestrians participating in the simulation
+            n_steps (int): Number of simulation steps
+            simulation_steps (List[SimulationStep]): List of simulation steps
+        &#34;&#34;&#34;
+        self.topography = topography
+        self.pedestrians = pedestrians
+        self.n_steps = n_steps
+        self.simulation_steps = []
+        for simulation_step in simulation_steps:
+            self.add_simulation_step(simulation_step)
+
+    def _is_valid_simulation_step(self, simulation_step: SimulationStep) -&gt; bool:
+        &#34;&#34;&#34;A simulation step is valid if there are positions for every defined pedestrian
+        and these positions are valid
+
+        Args:
+            simulation_step (SimulationStep): Simulation step to check
+
+        Returns:
+            bool: True if the simulation step is valid
+        &#34;&#34;&#34;
+        return (
+            all([pedestrian.id in simulation_step for pedestrian in self.pedestrians]) and
+            all([self._is_valid_position(simulation_step[pedestrian.id])
+                for pedestrian in self.pedestrians])
+        )
+
+    def _is_valid_position(self, position: Position) -&gt; bool:
+        &#34;&#34;&#34;A position is valid if it is inside the given topography
+
+        Args:
+            position (Position): Position to check
+
+        Returns:
+            [bool]: True if position is valid
+        &#34;&#34;&#34;
+        return 0 &lt;= position.x &lt; self.topography.width and 0 &lt;= position.y &lt; self.topography.height
+
+    def is_simulation_complete(self) -&gt; bool:
+        &#34;&#34;&#34; A simulation is complete if it has n_steps simulation steps
+
+        Returns:
+            [bool]: True if simulation is complete
+        &#34;&#34;&#34;
+        return len(self.simulation_steps) == self.n_steps
+
+    def add_simulation_step(self, simulation_step: SimulationStep) -&gt; None:
+        &#34;&#34;&#34;Add a simulation step
+
+        Args:
+            simulation_step (SimulationStep): The simulation step to add
+
+        Raises:
+            CannotAddSimulationStepException: Raised if the simulation is already complete
+            InvalidSimulationStepException: Raised if the simulation step is invalid
+        &#34;&#34;&#34;
+        if self.is_simulation_complete():
+            raise CannotAddSimulationStepException(simulation_step)
+        if not self._is_valid_simulation_step(simulation_step):
+            raise InvalidSimulationStepException(simulation_step)
+
+        self.simulation_steps.append(simulation_step)
+
+    @classmethod
+    def from_json(cls, path: str) -&gt; Simulation:
+        &#34;&#34;&#34;Instantiate a simulation from a JSON file
+
+        Args:
+            path (str): Path to the JSON file
+
+        Raises:
+            SimulationReconstructionException: Raised if the simulation could not be reconstructed 
+
+        Returns:
+            Simulation: 
+        &#34;&#34;&#34;
+        with open(path) as f:
+            data = json.load(f)
+        topography = Topography.from_dict(data[&#39;topography&#39;])
+
+        if &#39;pedestrians&#39; not in data:
+            raise SimulationReconstructionException(
+                &#34;Object must include &#39;pedestrians&#39;&#34;)
+        pedestrians = [Pedestrian(o[&#34;id&#34;], o.get(&#34;radius&#34;, 1), o.get(&#34;label&#34;, None))
+                       for o in data[&#39;pedestrians&#39;]]
+        if &#39;n_steps&#39; not in data:
+            raise SimulationReconstructionException(
+                &#34;Object must include &#39;n_steps&#39;&#34;)
+        if &#39;simulation_steps&#39; not in data:
+            raise SimulationReconstructionException(
+                &#34;Object must include &#39;simulation_steps&#39;&#34;)
+        simulation_steps: List[SimulationStep] = []
+        for step in data[&#39;simulation_steps&#39;]:
+            simulation_steps.append({
+                pp[&#34;id&#34;]: Position(*pp[&#34;position&#34;]) for pp in step[&#34;pedestrian_positions&#34;]
+            })
+        return Simulation(topography, pedestrians, data[&#39;n_steps&#39;], simulation_steps)
+
+    def to_json(self, path: str) -&gt; None:
+        &#34;&#34;&#34;Serialize the simulation to a JSON file
+
+        Args:
+            path (str): Path to the JSON file
+        &#34;&#34;&#34;
+        d = {
+            &#34;topography&#34;: self.topography.to_dict(),
+            &#34;pedestrians&#34;: [vars(pedestrian) for pedestrian in self.pedestrians],
+            &#34;n_steps&#34;: self.n_steps,
+            &#34;simulation_steps&#34;: [
+                {
+                    &#34;step&#34;: i,
+                    &#34;pedestrian_positions&#34;: [
+                        {
+                            &#34;id&#34;: key,
+                            &#34;position&#34;: [simulation_step[key].x, simulation_step[key].y]
+                        } for key in simulation_step.keys()
+                    ]
+                }
+                for i, simulation_step in enumerate(self.simulation_steps)
+            ]
+        }
+        with open(path, &#34;w+&#34;) as f:
+            json.dump(d, f, indent=4)
+
+
+class InvalidSimulationStepException(Exception):
+    def __init__(self, simulation_step: SimulationStep):
+        super().__init__(&#34;{} is invalid for this Topography.&#34;.format(str(simulation_step)))
+
+
+class CannotAddSimulationStepException(Exception):
+    def __init__(self, simulation_step: SimulationStep):
+        super().__init__(&#34;Simulation is full. Cannot add {}.&#34;.format(str(simulation_step)))
+
+
+class SimulationReconstructionException(Exception):
+    def __init__(self, message: str):
+        super().__init__(message)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cms_visualizer.simulation.CannotAddSimulationStepException"><code class="flex name class">
+<span>class <span class="ident">CannotAddSimulationStepException</span></span>
+<span>(</span><span>simulation_step: SimulationStep)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CannotAddSimulationStepException(Exception):
+    def __init__(self, simulation_step: SimulationStep):
+        super().__init__(&#34;Simulation is full. Cannot add {}.&#34;.format(str(simulation_step)))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="cms_visualizer.simulation.InvalidSimulationStepException"><code class="flex name class">
+<span>class <span class="ident">InvalidSimulationStepException</span></span>
+<span>(</span><span>simulation_step: SimulationStep)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InvalidSimulationStepException(Exception):
+    def __init__(self, simulation_step: SimulationStep):
+        super().__init__(&#34;{} is invalid for this Topography.&#34;.format(str(simulation_step)))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="cms_visualizer.simulation.Pedestrian"><code class="flex name class">
+<span>class <span class="ident">Pedestrian</span></span>
+<span>(</span><span>id: int, radius: int, label: Optional[Text])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Pedestrian(id: 'int', radius: 'int', label: 'Optional[Text]')</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Pedestrian:
+    id: int
+    radius: int
+    label: Optional[Text]</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="cms_visualizer.simulation.Pedestrian.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="cms_visualizer.simulation.Pedestrian.label"><code class="name">var <span class="ident">label</span> : Union[str, NoneType]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="cms_visualizer.simulation.Pedestrian.radius"><code class="name">var <span class="ident">radius</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="cms_visualizer.simulation.Position"><code class="flex name class">
+<span>class <span class="ident">Position</span></span>
+<span>(</span><span>x: int, y: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Position(x: 'int', y: 'int')</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Position:
+    x: int
+    y: int</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="cms_visualizer.simulation.Position.x"><code class="name">var <span class="ident">x</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="cms_visualizer.simulation.Position.y"><code class="name">var <span class="ident">y</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="cms_visualizer.simulation.Simulation"><code class="flex name class">
+<span>class <span class="ident">Simulation</span></span>
+<span>(</span><span>topography: Topography, pedestrians: List[<a title="cms_visualizer.simulation.Pedestrian" href="#cms_visualizer.simulation.Pedestrian">Pedestrian</a>], n_steps: int, simulation_steps: List[SimulationStep])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crowd simulation with topography and simulation steps </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>topography</code></strong> :&ensp;<code>Topography</code></dt>
+<dd>Topography in which the simulation took place</dd>
+<dt><strong><code>pedestrians</code></strong> :&ensp;<code>List[<a title="cms_visualizer.simulation.Pedestrian" href="#cms_visualizer.simulation.Pedestrian">Pedestrian</a>]</code></dt>
+<dd>List of pedestrians participating in the simulation</dd>
+<dt><strong><code>n_steps</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of simulation steps</dd>
+<dt><strong><code>simulation_steps</code></strong> :&ensp;<code>List[SimulationStep]</code></dt>
+<dd>List of simulation steps</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Simulation:
+    def __init__(self, topography: Topography, pedestrians: List[Pedestrian], n_steps: int, simulation_steps: List[SimulationStep]) -&gt; None:
+        &#34;&#34;&#34;Crowd simulation with topography and simulation steps 
+
+        Args:
+            topography (Topography): Topography in which the simulation took place
+            pedestrians (List[Pedestrian]): List of pedestrians participating in the simulation
+            n_steps (int): Number of simulation steps
+            simulation_steps (List[SimulationStep]): List of simulation steps
+        &#34;&#34;&#34;
+        self.topography = topography
+        self.pedestrians = pedestrians
+        self.n_steps = n_steps
+        self.simulation_steps = []
+        for simulation_step in simulation_steps:
+            self.add_simulation_step(simulation_step)
+
+    def _is_valid_simulation_step(self, simulation_step: SimulationStep) -&gt; bool:
+        &#34;&#34;&#34;A simulation step is valid if there are positions for every defined pedestrian
+        and these positions are valid
+
+        Args:
+            simulation_step (SimulationStep): Simulation step to check
+
+        Returns:
+            bool: True if the simulation step is valid
+        &#34;&#34;&#34;
+        return (
+            all([pedestrian.id in simulation_step for pedestrian in self.pedestrians]) and
+            all([self._is_valid_position(simulation_step[pedestrian.id])
+                for pedestrian in self.pedestrians])
+        )
+
+    def _is_valid_position(self, position: Position) -&gt; bool:
+        &#34;&#34;&#34;A position is valid if it is inside the given topography
+
+        Args:
+            position (Position): Position to check
+
+        Returns:
+            [bool]: True if position is valid
+        &#34;&#34;&#34;
+        return 0 &lt;= position.x &lt; self.topography.width and 0 &lt;= position.y &lt; self.topography.height
+
+    def is_simulation_complete(self) -&gt; bool:
+        &#34;&#34;&#34; A simulation is complete if it has n_steps simulation steps
+
+        Returns:
+            [bool]: True if simulation is complete
+        &#34;&#34;&#34;
+        return len(self.simulation_steps) == self.n_steps
+
+    def add_simulation_step(self, simulation_step: SimulationStep) -&gt; None:
+        &#34;&#34;&#34;Add a simulation step
+
+        Args:
+            simulation_step (SimulationStep): The simulation step to add
+
+        Raises:
+            CannotAddSimulationStepException: Raised if the simulation is already complete
+            InvalidSimulationStepException: Raised if the simulation step is invalid
+        &#34;&#34;&#34;
+        if self.is_simulation_complete():
+            raise CannotAddSimulationStepException(simulation_step)
+        if not self._is_valid_simulation_step(simulation_step):
+            raise InvalidSimulationStepException(simulation_step)
+
+        self.simulation_steps.append(simulation_step)
+
+    @classmethod
+    def from_json(cls, path: str) -&gt; Simulation:
+        &#34;&#34;&#34;Instantiate a simulation from a JSON file
+
+        Args:
+            path (str): Path to the JSON file
+
+        Raises:
+            SimulationReconstructionException: Raised if the simulation could not be reconstructed 
+
+        Returns:
+            Simulation: 
+        &#34;&#34;&#34;
+        with open(path) as f:
+            data = json.load(f)
+        topography = Topography.from_dict(data[&#39;topography&#39;])
+
+        if &#39;pedestrians&#39; not in data:
+            raise SimulationReconstructionException(
+                &#34;Object must include &#39;pedestrians&#39;&#34;)
+        pedestrians = [Pedestrian(o[&#34;id&#34;], o.get(&#34;radius&#34;, 1), o.get(&#34;label&#34;, None))
+                       for o in data[&#39;pedestrians&#39;]]
+        if &#39;n_steps&#39; not in data:
+            raise SimulationReconstructionException(
+                &#34;Object must include &#39;n_steps&#39;&#34;)
+        if &#39;simulation_steps&#39; not in data:
+            raise SimulationReconstructionException(
+                &#34;Object must include &#39;simulation_steps&#39;&#34;)
+        simulation_steps: List[SimulationStep] = []
+        for step in data[&#39;simulation_steps&#39;]:
+            simulation_steps.append({
+                pp[&#34;id&#34;]: Position(*pp[&#34;position&#34;]) for pp in step[&#34;pedestrian_positions&#34;]
+            })
+        return Simulation(topography, pedestrians, data[&#39;n_steps&#39;], simulation_steps)
+
+    def to_json(self, path: str) -&gt; None:
+        &#34;&#34;&#34;Serialize the simulation to a JSON file
+
+        Args:
+            path (str): Path to the JSON file
+        &#34;&#34;&#34;
+        d = {
+            &#34;topography&#34;: self.topography.to_dict(),
+            &#34;pedestrians&#34;: [vars(pedestrian) for pedestrian in self.pedestrians],
+            &#34;n_steps&#34;: self.n_steps,
+            &#34;simulation_steps&#34;: [
+                {
+                    &#34;step&#34;: i,
+                    &#34;pedestrian_positions&#34;: [
+                        {
+                            &#34;id&#34;: key,
+                            &#34;position&#34;: [simulation_step[key].x, simulation_step[key].y]
+                        } for key in simulation_step.keys()
+                    ]
+                }
+                for i, simulation_step in enumerate(self.simulation_steps)
+            ]
+        }
+        with open(path, &#34;w+&#34;) as f:
+            json.dump(d, f, indent=4)</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="cms_visualizer.simulation.Simulation.from_json"><code class="name flex">
+<span>def <span class="ident">from_json</span></span>(<span>path: str) ‑> <a title="cms_visualizer.simulation.Simulation" href="#cms_visualizer.simulation.Simulation">Simulation</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Instantiate a simulation from a JSON file</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the JSON file</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code><a title="cms_visualizer.simulation.SimulationReconstructionException" href="#cms_visualizer.simulation.SimulationReconstructionException">SimulationReconstructionException</a></code></dt>
+<dd>Raised if the simulation could not be reconstructed </dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Simulation:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def from_json(cls, path: str) -&gt; Simulation:
+    &#34;&#34;&#34;Instantiate a simulation from a JSON file
+
+    Args:
+        path (str): Path to the JSON file
+
+    Raises:
+        SimulationReconstructionException: Raised if the simulation could not be reconstructed 
+
+    Returns:
+        Simulation: 
+    &#34;&#34;&#34;
+    with open(path) as f:
+        data = json.load(f)
+    topography = Topography.from_dict(data[&#39;topography&#39;])
+
+    if &#39;pedestrians&#39; not in data:
+        raise SimulationReconstructionException(
+            &#34;Object must include &#39;pedestrians&#39;&#34;)
+    pedestrians = [Pedestrian(o[&#34;id&#34;], o.get(&#34;radius&#34;, 1), o.get(&#34;label&#34;, None))
+                   for o in data[&#39;pedestrians&#39;]]
+    if &#39;n_steps&#39; not in data:
+        raise SimulationReconstructionException(
+            &#34;Object must include &#39;n_steps&#39;&#34;)
+    if &#39;simulation_steps&#39; not in data:
+        raise SimulationReconstructionException(
+            &#34;Object must include &#39;simulation_steps&#39;&#34;)
+    simulation_steps: List[SimulationStep] = []
+    for step in data[&#39;simulation_steps&#39;]:
+        simulation_steps.append({
+            pp[&#34;id&#34;]: Position(*pp[&#34;position&#34;]) for pp in step[&#34;pedestrian_positions&#34;]
+        })
+    return Simulation(topography, pedestrians, data[&#39;n_steps&#39;], simulation_steps)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="cms_visualizer.simulation.Simulation.add_simulation_step"><code class="name flex">
+<span>def <span class="ident">add_simulation_step</span></span>(<span>self, simulation_step: SimulationStep) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a simulation step</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>simulation_step</code></strong> :&ensp;<code>SimulationStep</code></dt>
+<dd>The simulation step to add</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code><a title="cms_visualizer.simulation.CannotAddSimulationStepException" href="#cms_visualizer.simulation.CannotAddSimulationStepException">CannotAddSimulationStepException</a></code></dt>
+<dd>Raised if the simulation is already complete</dd>
+<dt><code><a title="cms_visualizer.simulation.InvalidSimulationStepException" href="#cms_visualizer.simulation.InvalidSimulationStepException">InvalidSimulationStepException</a></code></dt>
+<dd>Raised if the simulation step is invalid</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_simulation_step(self, simulation_step: SimulationStep) -&gt; None:
+    &#34;&#34;&#34;Add a simulation step
+
+    Args:
+        simulation_step (SimulationStep): The simulation step to add
+
+    Raises:
+        CannotAddSimulationStepException: Raised if the simulation is already complete
+        InvalidSimulationStepException: Raised if the simulation step is invalid
+    &#34;&#34;&#34;
+    if self.is_simulation_complete():
+        raise CannotAddSimulationStepException(simulation_step)
+    if not self._is_valid_simulation_step(simulation_step):
+        raise InvalidSimulationStepException(simulation_step)
+
+    self.simulation_steps.append(simulation_step)</code></pre>
+</details>
+</dd>
+<dt id="cms_visualizer.simulation.Simulation.is_simulation_complete"><code class="name flex">
+<span>def <span class="ident">is_simulation_complete</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A simulation is complete if it has n_steps simulation steps</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>True if simulation is complete</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_simulation_complete(self) -&gt; bool:
+    &#34;&#34;&#34; A simulation is complete if it has n_steps simulation steps
+
+    Returns:
+        [bool]: True if simulation is complete
+    &#34;&#34;&#34;
+    return len(self.simulation_steps) == self.n_steps</code></pre>
+</details>
+</dd>
+<dt id="cms_visualizer.simulation.Simulation.to_json"><code class="name flex">
+<span>def <span class="ident">to_json</span></span>(<span>self, path: str) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Serialize the simulation to a JSON file</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the JSON file</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_json(self, path: str) -&gt; None:
+    &#34;&#34;&#34;Serialize the simulation to a JSON file
+
+    Args:
+        path (str): Path to the JSON file
+    &#34;&#34;&#34;
+    d = {
+        &#34;topography&#34;: self.topography.to_dict(),
+        &#34;pedestrians&#34;: [vars(pedestrian) for pedestrian in self.pedestrians],
+        &#34;n_steps&#34;: self.n_steps,
+        &#34;simulation_steps&#34;: [
+            {
+                &#34;step&#34;: i,
+                &#34;pedestrian_positions&#34;: [
+                    {
+                        &#34;id&#34;: key,
+                        &#34;position&#34;: [simulation_step[key].x, simulation_step[key].y]
+                    } for key in simulation_step.keys()
+                ]
+            }
+            for i, simulation_step in enumerate(self.simulation_steps)
+        ]
+    }
+    with open(path, &#34;w+&#34;) as f:
+        json.dump(d, f, indent=4)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="cms_visualizer.simulation.SimulationReconstructionException"><code class="flex name class">
+<span>class <span class="ident">SimulationReconstructionException</span></span>
+<span>(</span><span>message: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SimulationReconstructionException(Exception):
+    def __init__(self, message: str):
+        super().__init__(message)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cms_visualizer" href="index.html">cms_visualizer</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cms_visualizer.simulation.CannotAddSimulationStepException" href="#cms_visualizer.simulation.CannotAddSimulationStepException">CannotAddSimulationStepException</a></code></h4>
+</li>
+<li>
+<h4><code><a title="cms_visualizer.simulation.InvalidSimulationStepException" href="#cms_visualizer.simulation.InvalidSimulationStepException">InvalidSimulationStepException</a></code></h4>
+</li>
+<li>
+<h4><code><a title="cms_visualizer.simulation.Pedestrian" href="#cms_visualizer.simulation.Pedestrian">Pedestrian</a></code></h4>
+<ul class="">
+<li><code><a title="cms_visualizer.simulation.Pedestrian.id" href="#cms_visualizer.simulation.Pedestrian.id">id</a></code></li>
+<li><code><a title="cms_visualizer.simulation.Pedestrian.label" href="#cms_visualizer.simulation.Pedestrian.label">label</a></code></li>
+<li><code><a title="cms_visualizer.simulation.Pedestrian.radius" href="#cms_visualizer.simulation.Pedestrian.radius">radius</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="cms_visualizer.simulation.Position" href="#cms_visualizer.simulation.Position">Position</a></code></h4>
+<ul class="">
+<li><code><a title="cms_visualizer.simulation.Position.x" href="#cms_visualizer.simulation.Position.x">x</a></code></li>
+<li><code><a title="cms_visualizer.simulation.Position.y" href="#cms_visualizer.simulation.Position.y">y</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="cms_visualizer.simulation.Simulation" href="#cms_visualizer.simulation.Simulation">Simulation</a></code></h4>
+<ul class="">
+<li><code><a title="cms_visualizer.simulation.Simulation.add_simulation_step" href="#cms_visualizer.simulation.Simulation.add_simulation_step">add_simulation_step</a></code></li>
+<li><code><a title="cms_visualizer.simulation.Simulation.from_json" href="#cms_visualizer.simulation.Simulation.from_json">from_json</a></code></li>
+<li><code><a title="cms_visualizer.simulation.Simulation.is_simulation_complete" href="#cms_visualizer.simulation.Simulation.is_simulation_complete">is_simulation_complete</a></code></li>
+<li><code><a title="cms_visualizer.simulation.Simulation.to_json" href="#cms_visualizer.simulation.Simulation.to_json">to_json</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="cms_visualizer.simulation.SimulationReconstructionException" href="#cms_visualizer.simulation.SimulationReconstructionException">SimulationReconstructionException</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
